@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/layout/Header";
 import Todos from "../components/Todos";
+import AddTodo from "../components/AddTodo"
 
 class TodoApp extends React.Component {
   state = {
@@ -44,10 +45,15 @@ class TodoApp extends React.Component {
       })
   }
 
+  addTodo = title => {
+    console.log(title);
+    };
+
   render() {
     return (
       <div className="container">
         <Header />
+        <AddTodo addTodo={this.addTodo}/>
         <Todos
           todos={this.state.todos}
           handleCheckbox={this.handleCheckboxChange}
