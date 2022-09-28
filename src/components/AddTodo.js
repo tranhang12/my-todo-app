@@ -12,8 +12,13 @@ class AddTodo extends React.Component {
 
     addTodo = e => {
         e.preventDefault();
-        this.props.addTodo(this.state.title);
-    }
+        if (this.state.title !== '') this.props.addTodo(this.state.title);
+
+        this.setState({
+          title: ""
+        })
+      }
+
 
   render() {
     return (
